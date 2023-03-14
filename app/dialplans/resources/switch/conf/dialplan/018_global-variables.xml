@@ -2,6 +2,9 @@
 	<extension name="global-variables" number="" continue="true" app_uuid="d49ee3bd-5085-4619-a2f9-2b62c8c461c5" global="true" order="18">
 		<condition>
 			<action application="set" data="RFC2822_DATE=${strftime(%a, %d %b %Y %T %z)}"/>
+			<action application="set" data="timezone=Europe/Ljubljana" inline="true"/>
+			<action application="export" data="day_of_call=${strftime(%d %b %Y)}"/>
+			<action application="export" data="time_of_call=${strftime(%T)}"/>
 		</condition>
 	</extension>
 </context>
