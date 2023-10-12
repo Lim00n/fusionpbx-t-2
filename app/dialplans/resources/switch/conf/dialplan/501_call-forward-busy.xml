@@ -1,15 +1,15 @@
 <context name="{v_context}">
-	<extension name="call-forward" number="*21*,*211*,*212*" continue="false" app_uuid="b4b32fb4-0181-4876-9bec-b9dff1299d60" enabled="true" order="500">
-		<condition field="destination_number" expression="^\*21(\d{2,16}\*?)$" break="on-true">
+	<extension name="call-forward" number="*22*,*221*,*222*" continue="false" app_uuid="e0eddea2-5164-41f2-8962-b526f78bdcb6" enabled="true" order="501">
+		<condition field="destination_number" expression="^\*22(\d{2,16}\*?)$" break="on-true">
 			<action application="set" data="manual_destination=$1"/>
 			<action application="set" data="request_id=false"/>
 			<action application="set" data="enabled=true"/>
-			<action application="lua" data="call_forward.lua"/>
+			<action application="lua" data="call_forward_busy.lua"/>
 		</condition>
-		<condition field="destination_number" expression="^\*211\*?$" break="on-true">
+		<condition field="destination_number" expression="^\*221\*?$" break="on-true">
 			<action application="set" data="request_id=false"/>
 			<action application="set" data="enabled=false"/>
-			<action application="lua" data="call_forward.lua"/>
+			<action application="lua" data="call_forward_busy.lua"/>
 		</condition>
 		<condition field="destination_number" expression="^\*74\*?$" break="on-true">
 			<action application="set" data="request_id=false"/>
