@@ -1,6 +1,6 @@
 <context name="{v_context}">
 	<extension name="call-forward-no-reply" number="*23*,*231*,*232*" continue="false" app_uuid="487fadce-3afc-4c76-9df5-0467b971e40a" global="true" enabled="true" order="502">
-		<condition field="destination_number" expression="^\*23(\d{2,16}\*?)$" break="on-true">
+		<condition field="destination_number" expression="^\*23(\d{2,16})\*?$" break="on-true">
 			<action application="set" data="manual_destination=$1"/>
 			<action application="set" data="request_id=false"/>
 			<action application="set" data="enabled=true"/>

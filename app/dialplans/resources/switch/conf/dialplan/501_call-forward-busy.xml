@@ -1,6 +1,6 @@
 <context name="{v_context}">
 	<extension name="call-forward-busy" number="*22*,*221*,*222*" continue="false" app_uuid="e0eddea2-5164-41f2-8962-b526f78bdcb6" global="true" enabled="true" order="501">
-		<condition field="destination_number" expression="^\*22(\d{2,16}\*?)$" break="on-true">
+		<condition field="destination_number" expression="^\*22(\d{2,16})\*?$" break="on-true">
 			<action application="set" data="manual_destination=$1"/>
 			<action application="set" data="request_id=false"/>
 			<action application="set" data="enabled=true"/>
