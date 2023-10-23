@@ -1,8 +1,9 @@
-<context name="${domain_name}">
-	<extension name="call-forward-not-registered" number="" app_uuid="b2035288-b899-4bcd-8b8f-8175ce8ec9e3" global="true" order="507">
+<context name="${v_context}">
+	<extension name="call-forward-not-registered" number="" app_uuid="b2035288-b899-4bcd-8b8f-8175ce8ec9e3" global="true" enabled="true" order="507">
 		<condition field="${user_exists}" expression="true"/>
 		<condition field="${forward_user_not_registered_enabled}" expression="true"/>
 		<condition field="${sofia_contact */${destination_number}@${domain_name}}" expression="error/user_not_registered">
 			<action application="lua" data="forward_user_not_registered.lua"/>
-		</condition>	
+		</condition>
+	</extension>
 </context>
